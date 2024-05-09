@@ -1,0 +1,38 @@
+{
+	"name": "create-preact",
+	"version": "0.4.3",
+	"description": "Create a Vite-powered Preact app in seconds",
+	"type": "module",
+	"bin": {
+		"create-preact": "src/index.js"
+	},
+	"scripts": {
+		"format": "prettier --write --ignore-path .gitignore ."
+	},
+	"authors": "The Preact Authors (https://preactjs.com)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/preactjs/create-preact.git"
+	},
+	"files": [
+		"src",
+		"templates",
+		"LICENSE",
+		"package.json",
+		"README.md"
+	],
+	"dependencies": {
+		"@clack/prompts": "^0.6.3",
+		"execa": "^8.0.1",
+		"kolorist": "^1.8.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.2.3",
+		"preact": "^10.15.0",
+		"prettier": "^2.6.2",
+		"prettier-config-rschristian": "^0.1.1",
+		"typescript": "^5.0.0"
+	},
+	"prettier": "prettier-config-rschristian"
+}
