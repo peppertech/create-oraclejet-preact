@@ -29,7 +29,7 @@ const brandColor = /** @type {const} */ ([174, 128, 255]);
 			dir: () =>
 				prompts.text({
 					message: 'Project directory:',
-					placeholder: 'my-preact-app',
+					placeholder: 'my-oraclejet-preact-app',
 					validate(value) {
 						if (value.length == 0) {
 							return 'Directory name is required!';
@@ -38,30 +38,29 @@ const brandColor = /** @type {const} */ ([174, 128, 255]);
 						}
 					},
 				}),
-			language: () =>
-				prompts.select({
-					message: 'Project language:',
-					initialValue: 'js',
-					options: [
-						{ value: 'js', label: 'JavaScript' },
-						{ value: 'ts', label: 'TypeScript' },
-					],
-				}),
+			// language: () =>
+			// 	prompts.select({
+			// 		message: 'Project language:',
+			// 		initialValue: 'ts',
+			// 		options: [
+			// 			{ value: 'ts', label: 'TypeScript' },
+			// 		],
+			// 	}),
 			useRouter: () =>
 				prompts.confirm({
 					message: 'Use router?',
 					initialValue: false,
 				}),
-			usePrerender: () =>
-				prompts.confirm({
-					message: 'Prerender app (SSG)?',
-					initialValue: false,
-				}),
-			useESLint: () =>
-				prompts.confirm({
-					message: 'Use ESLint?',
-					initialValue: false,
-				}),
+			// usePrerender: () =>
+			// 	prompts.confirm({
+			// 		message: 'Prerender app (SSG)?',
+			// 		initialValue: false,
+			// 	}),
+			// useESLint: () =>
+			// 	prompts.confirm({
+			// 		message: 'Use ESLint?',
+			// 		initialValue: false,
+			// 	}),
 		},
 		{
 			onCancel: () => {
