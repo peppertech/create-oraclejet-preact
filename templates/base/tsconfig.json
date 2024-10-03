@@ -6,20 +6,24 @@
 		"noEmit": true,
 		"allowJs": true,
 		"strict": false,
-
 		/* Preact Config */
 		"jsx": "react",
 		"jsxFactory": "h",
 		"jsxFragmentFactory": "Fragment",
 		"skipLibCheck": true,
-        "esModuleInterop": true,
-        "baseUrl": "./",          
+		"esModuleInterop": true,
+		"baseUrl": "./",
 		"paths": {
-			"react": ["./node_modules/preact/compat/"],
-			"react-dom": ["./node_modules/preact/compat/"],
-      		"@oracle/oraclejet-preact/*": ["./node_modules/@oracle/oraclejet-preact/*"],
-			"preact": ["./node_modules/preact"]
+			"react": [
+				"./node_modules/preact/compat/"
+			],
+			"react-dom": [
+				"./node_modules/preact/compat/"
+			]
 		}
 	},
-	"include": ["src/**/*", "node_modules/vite/client.d.ts"]
+	"include": [
+		"src/**/*",
+		"node_modules/vite/client.d.ts"
+	]
 }
