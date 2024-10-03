@@ -38,14 +38,14 @@ const brandColor = /** @type {const} */ ([174, 128, 255]);
 						}
 					},
 				}),
-			 language: () =>
-			 	prompts.select({
-			 		message: 'Project language:',
-			 		initialValue: 'ts',
-			 		options: [
-			 			{ value: 'ts', label: 'TypeScript' },
-			 		],
-			 	}),
+			language: () =>
+				prompts.select({
+					message: 'Project language:',
+					initialValue: 'ts',
+					options: [
+						{ value: 'ts', label: 'TypeScript' },
+					],
+				}),
 			useRouter: () =>
 				prompts.confirm({
 					message: 'Use router?',
@@ -70,7 +70,7 @@ const brandColor = /** @type {const} */ ([174, 128, 255]);
 		},
 	);
 	const targetDir = resolve(process.cwd(), dir);
-	const useTS = language === 'ts';
+	const useTS = language;
 	/** @type {ConfigOptions} */
 	const opts = { packageManager, useTS, useRouter, usePrerender, useESLint };
 
@@ -252,8 +252,8 @@ function installPackages(pkgs, opts) {
  * @returns {'yarn' | 'pnpm' | 'npm'}
  */
 function getPkgManager() {
-  const userAgent = process.env.npm_config_user_agent || ''
-  if (userAgent.startsWith('yarn')) return 'yarn'
-  if (userAgent.startsWith('pnpm')) return 'pnpm'
-  return 'npm'
+	const userAgent = process.env.npm_config_user_agent || ''
+	if (userAgent.startsWith('yarn')) return 'yarn'
+	if (userAgent.startsWith('pnpm')) return 'pnpm'
+	return 'npm'
 }
