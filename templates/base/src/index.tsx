@@ -13,6 +13,7 @@ import {
 
 export function App() {
 	const [translations, setTranslations] = useState(null);
+	let env: any
 
 	useEffect(() => {
 		// Todo: determine the user's preferred locale.
