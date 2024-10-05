@@ -38,7 +38,7 @@ const brandColor = /** @type {const} */ ([174, 128, 255]);
 						}
 					},
 				}),
-				language:"ts",
+				language:()=>{return "ts"},
 			// language: () =>
 			// 	prompts.select({
 			// 		message: 'Project language:',
