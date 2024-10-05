@@ -22,7 +22,7 @@ export function App() {
 
 		const loadTranslations = async () => {
 			const bundle = await import(
-				`../node_modules/@oracle/oraclejet-preact/resources/nls/${locale}/bundle.js`
+				`../node_modules/@oracle/oraclejet-preact/es/resources/nls/${locale}/bundle.js`
 			);
 			setTranslations(bundle.default);
 		};
