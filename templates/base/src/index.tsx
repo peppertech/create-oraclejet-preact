@@ -4,7 +4,7 @@ import { LocationProvider, Router, Route } from 'preact-iso';
 
 import { Header } from './components/Header.jsx';
 import { Home } from './pages/Home/index.jsx';
-import { NotFound } from './pages/_404.jsx';
+import { About } from './pages/About.js';
 import './style.css';
 import {
 	RootEnvironment,
@@ -42,7 +42,7 @@ export function App() {
 				<main>
 					<Router>
 						<Route path="/" component={Home} />
-						<Route default component={NotFound} />
+						<Route default component={About} />
 					</Router>
 				</main>
 			</LocationProvider>

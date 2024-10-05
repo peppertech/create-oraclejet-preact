@@ -1,4 +1,4 @@
-export function NotFound() {
+export function About() {
 	return (
 		<section>
 			<h1>404: Not Found</h1>
