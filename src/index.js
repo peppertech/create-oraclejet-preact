@@ -38,15 +38,14 @@ const brandColor = /** @type {const} */ ([174, 128, 255]);
 						}
 					},
 				}),
-				language:()=>{return "ts"},
-			// language: () =>
-			// 	prompts.select({
-			// 		message: 'Project language:',
-			// 		initialValue: 'ts',
-			// 		options: [
-			// 			{ value: 'ts', label: 'TypeScript' },
-			// 		],
-			// 	}),
+			language: () =>
+				prompts.select({
+					message: 'Project language:',
+					initialValue: 'ts',
+					options: [
+						{ value: 'ts', label: 'TypeScript' },
+					],
+				}),
 			useRouter: () =>
 				prompts.confirm({
 					message: 'Use router?',
