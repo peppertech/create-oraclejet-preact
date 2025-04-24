@@ -38,19 +38,19 @@ const brandColor = /** @type {const} */ ([174, 128, 255]);
 						}
 					},
 				}),
-			language: () =>
-				prompts.select({
-					message: 'Project language:',
-					initialValue: 'ts',
-					options: [
-						{ value: 'ts', label: 'TypeScript' },
-					],
-				}),
-			useRouter: () =>
-				prompts.confirm({
-					message: 'Use router?',
-					initialValue: false,
-				}),
+			// language: () =>
+			// 	prompts.select({
+			// 		message: 'Project language:',
+			// 		initialValue: 'ts',
+			// 		options: [
+			// 			{ value: 'ts', label: 'TypeScript' },
+			// 		],
+			// 	}),
+			// useRouter: () =>
+			// 	prompts.confirm({
+			// 		message: 'Use router?',
+			// 		initialValue: false,
+			// 	}),
 			// usePrerender: () =>
 			// 	prompts.confirm({
 			// 		message: 'Prerender app (SSG)?',
@@ -129,47 +129,47 @@ async function scaffold(to, opts) {
 	const __dirname = dirname(fileURLToPath(import.meta.url));
 	await templateDir(resolve(__dirname, '../templates', 'base'), to, opts);
 
-	if (opts.useRouter) {
-		await templateDir(
-			resolve(__dirname, '../templates', 'config', 'router'),
-			resolve(to, 'src'),
-			opts,
-		);
-	}
+	// if (opts.useRouter) {
+	// 	await templateDir(
+	// 		resolve(__dirname, '../templates', 'config', 'router'),
+	// 		resolve(to, 'src'),
+	// 		opts,
+	// 	);
+	// }
 
-	if (opts.usePrerender) {
-		await templateDir(
-			resolve(
-				__dirname,
-				'../templates',
-				'config',
-				opts.useRouter ? 'prerender-router' : 'prerender',
-			),
-			to,
-			opts,
-		);
+	// if (opts.usePrerender) {
+	// 	await templateDir(
+	// 		resolve(
+	// 			__dirname,
+	// 			'../templates',
+	// 			'config',
+	// 			opts.useRouter ? 'prerender-router' : 'prerender',
+	// 		),
+	// 		to,
+	// 		opts,
+	// 	);
 
-		const htmlPath = resolve(to, 'index.html');
-		const html = (await fs.readFile(htmlPath, 'utf-8')).replace('<script', '<script prerender');
-		await fs.writeFile(htmlPath, html);
-	}
+	// 	const htmlPath = resolve(to, 'index.html');
+	// 	const html = (await fs.readFile(htmlPath, 'utf-8')).replace('<script', '<script prerender');
+	// 	await fs.writeFile(htmlPath, html);
+	// }
 
-	if (opts.useTS) {
-		await fs.rename(resolve(to, 'jsconfig.json'), resolve(to, 'tsconfig.json'));
+	// if (opts.useTS) {
+	// 	await fs.rename(resolve(to, 'jsconfig.json'), resolve(to, 'tsconfig.json'));
 
-		const htmlPath = resolve(to, 'index.html');
-		const html = (await fs.readFile(htmlPath, 'utf-8')).replace('index.jsx', 'index.tsx');
-		await fs.writeFile(htmlPath, html);
-	}
+	// 	const htmlPath = resolve(to, 'index.html');
+	// 	const html = (await fs.readFile(htmlPath, 'utf-8')).replace('index.jsx', 'index.tsx');
+	// 	await fs.writeFile(htmlPath, html);
+	// }
 
-	if (opts.useESLint) {
-		const pkgPath = resolve(to, 'package.json');
-		const pkg = JSON.parse(await fs.readFile(pkgPath, 'utf-8'));
-		pkg.eslintConfig = {
-			extends: 'preact',
-		};
-		await fs.writeFile(pkgPath, JSON.stringify(pkg, null, '\t'));
-	}
+	// if (opts.useESLint) {
+	// 	const pkgPath = resolve(to, 'package.json');
+	// 	const pkg = JSON.parse(await fs.readFile(pkgPath, 'utf-8'));
+	// 	pkg.eslintConfig = {
+	// 		extends: 'preact',
+	// 	};
+	// 	await fs.writeFile(pkgPath, JSON.stringify(pkg, null, '\t'));
+	// }
 }
 
 /**
