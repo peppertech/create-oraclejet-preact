@@ -7,7 +7,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@oracle/oraclejet-preact": "~17.0.0",
+		"@oracle/oraclejet-preact": "~18.0.0",
 		"preact": "^10.20.0",
 		"preact-iso": "^2.6.3"
 	},
