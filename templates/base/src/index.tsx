@@ -10,6 +10,7 @@ import {
 	RootEnvironment,
 	RootEnvironmentProvider,
 } from "@oracle/oraclejet-preact/UNSAFE_Environment";
+import "@oracle/oraclejet-preact/Common/themes/redwood/theme.css"
 
 export function App() {
 	const [translations, setTranslations] = useState(null);
@@ -33,6 +34,7 @@ export function App() {
 	if (translations) {
 		const env: Partial<RootEnvironment> = {
 			translations: { "@oracle/oraclejet-preact": translations },
+			mode:"test"
 		};
 	}
 	return (
