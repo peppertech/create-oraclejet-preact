@@ -10,7 +10,7 @@ import {
 	RootEnvironment,
 	RootEnvironmentProvider,
 } from "@oracle/oraclejet-preact/UNSAFE_Environment";
-import "@oracle/oraclejet-preact/Common/themes/redwood/theme.css"
+import "@oracle/oraclejet-preact/Common/themes/redwood/theme.styles.css"
 
 export function App() {
 	const [translations, setTranslations] = useState(null);
