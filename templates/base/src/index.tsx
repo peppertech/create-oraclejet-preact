@@ -11,6 +11,8 @@ import {
 	RootEnvironmentProvider,
 } from "@oracle/oraclejet-preact/UNSAFE_Environment";
 import "@oracle/oraclejet-preact/Common/themes/redwood/theme.styles.css"
+/* This is hardcoded to the en locale for now. TODO: workout how to do this with dynamic imports with rollup */
+import * as eBundle from "../node_modules/@oracle/oraclejet-preact/es/resources/nls/en/bundle.js"
 
 export function App() {
 	const [translations, setTranslations] = useState(null);
@@ -22,10 +24,12 @@ export function App() {
 		const locale = "en";
 
 		const loadTranslations = async () => {
-			const bundle = await import(
-				`../node_modules/@oracle/oraclejet-preact/es/resources/nls/${locale}/bundle.js`
-			);
-			setTranslations(bundle.default);
+
+			/** Dynamic imports don't work very well with Rollup. TODO: make this work in a way that rollup will like. */
+			// const bundle = await import(
+			// 	`../node_modules/@oracle/oraclejet-preact/es/resources/nls/${locale}/bundle.js`
+			// );
+			setTranslations(eBundle.default);
 		};
 
 		loadTranslations();
