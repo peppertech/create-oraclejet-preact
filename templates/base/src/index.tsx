@@ -28,7 +28,7 @@ export function App() {
 		return null; // or a fallback/loading indicator
 	}
 	return (
-		<RootEnvironmentProvider environment={translations}>
+		<RootEnvironmentProvider environment={env}>
 			<LocationProvider>
 				<Header />
 				<main>
