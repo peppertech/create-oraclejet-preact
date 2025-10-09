@@ -15,34 +15,20 @@ import "@oracle/oraclejet-preact/Common/themes/redwood/theme.styles.css"
 import * as eBundle from "../node_modules/@oracle/oraclejet-preact/es/resources/nls/en/bundle.js"
 
 export function App() {
-	const [translations, setTranslations] = useState(null);
-	let env: any
+	const [env, setEnv] = useState(null);
 
 	useEffect(() => {
-		// Todo: determine the user's preferred locale.
-		// For now, we are hard coding this
-		const locale = "en";
-
-		const loadTranslations = async () => {
-
-			/** Dynamic imports don't work very well with Rollup. TODO: make this work in a way that rollup will like. */
-			// const bundle = await import(
-			// 	`../node_modules/@oracle/oraclejet-preact/es/resources/nls/${locale}/bundle.js`
-			// );
-			setTranslations(eBundle.default);
-		};
-
-		loadTranslations();
+		setEnv({
+			translations: { "@oracle/oraclejet-preact": eBundle.default },
+			mode: "test",
+		});
 	}, []);
 
-	if (translations) {
-		const env: Partial<RootEnvironment> = {
-			translations: { "@oracle/oraclejet-preact": translations },
-			mode:"test"
-		};
+	if (!env) {
+		return null; // or a fallback/loading indicator
 	}
 	return (
-		<RootEnvironmentProvider environment={env}>
+		<RootEnvironmentProvider environment={translations}>
 			<LocationProvider>
 				<Header />
 				<main>
