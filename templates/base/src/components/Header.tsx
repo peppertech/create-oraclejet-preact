@@ -7,10 +7,16 @@ export function Header() {
 		<header>
 			<nav>
 				<a href="/" class={url == '/' && 'active'}>
-					Home
+					Dashboard
 				</a>
-				<a href="/404" class={url == '/404' && 'active'}>
-					404
+				<a href="/customers" class={url == '/customers' && 'active'}>
+					Customers
+				</a>
+				<a href="/about" class={url == '/about' && 'active'}>
+					About
+				</a>
+				<a href="/testing" class={url == '/testing' && 'active'}>
+					Testing
 				</a>
 			</nav>
 		</header>

@@ -48,12 +48,12 @@ header a:hover {
 }
 
 main {
-	flex: auto;
+	/* flex: auto;
 	display: flex;
-	align-items: center;
-	max-width: 1280px;
-	margin: 0 auto;
-	text-align: center;
+	align-items: flex-start;
+	max-width: 1280px; */
+	margin: 20px;
+	/* text-align: start; */
 }
 
 @media (max-width: 639px) {

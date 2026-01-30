@@ -6,11 +6,10 @@ img:hover {
 	filter: drop-shadow(0 0 2em #673ab8aa);
 }
 
-.home section {
-	margin-top: 5rem;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	column-gap: 1.5rem;
+.customers {
+	margin:20px;
+	align-content: flex-start;
+
 }
 
 .resource {

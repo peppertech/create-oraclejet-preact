@@ -2,9 +2,11 @@ import { render, h } from 'preact';
 import { useEffect, useState } from "preact/hooks"
 import { LocationProvider, Router, Route } from 'preact-iso';
 
-import { Header } from './components/Header.jsx';
-import { Home } from './pages/Home/index.jsx';
-import { About } from './pages/About.js';
+import { Header } from './components/Header';
+import Dashboard from './pages/Dashboard/index';
+import Customers from './pages/Customers/index';
+import About from './pages/About/index';
+import Testing from './pages/Testing/index';
 import './style.css';
 import {
 	RootEnvironment,
@@ -33,8 +35,11 @@ export function App() {
 				<Header />
 				<main>
 					<Router>
-						<Route path="/" component={Home} />
-						<Route default component={About} />
+						<Route path="/" component={Dashboard} />
+						<Route default component={Dashboard} />
+						<Route path="/customers" component={Customers} />
+						<Route path="/about" component={About} />
+						<Route path="/testing" component={Testing} />
 					</Router>
 				</main>
 			</LocationProvider>
