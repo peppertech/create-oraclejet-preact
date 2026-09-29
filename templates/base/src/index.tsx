@@ -1,6 +1,13 @@
 import { render, h } from 'preact';
 import { useEffect, useState } from "preact/hooks"
 import { LocationProvider, Router, Route } from 'preact-iso';
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/preact-query";
 
 import { Header } from './components/Header';
 import Dashboard from './pages/Dashboard/index';
